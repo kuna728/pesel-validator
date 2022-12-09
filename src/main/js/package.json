@@ -1,0 +1,23 @@
+{
+  "name": "pesel-validator",
+  "version": "1.0.0",
+  "description": "[PL] Walidator numerów PESEL dla JS i javy. Walidator umożliwia walidację samego numeru PESEL jak i walidację na podstawie podanej daty urodzenia oraz płci.",
+  "main": "src/peselValidator.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "type": "module",
+  "keywords": [
+    "pesel",
+    "walidator",
+    "validation"
+  ],
+  "author": "kuna7",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}

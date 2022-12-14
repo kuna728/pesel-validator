@@ -1,4 +1,4 @@
-const moment = require("moment");
+import moment from "moment";
 
 const GENDER_DICT = {
     male: 'm',
@@ -12,7 +12,7 @@ const GENDER_DICT = {
     o: 'o'
 }
 
-function peselValidator(pesel, optionalArgs) {
+export default function peselValidator(pesel, optionalArgs) {
     const {dateOfBirth = null, gender = null} = optionalArgs || {};
 
     checkTypes(pesel, dateOfBirth, gender);
@@ -29,8 +29,6 @@ function peselValidator(pesel, optionalArgs) {
     return validateDatePart(datePart) && datesEqual(datePart, dateOfBirth)
         && genderEqual(genderPart, gender) && validateCheckSum(pesel);
 }
-
-module.exports = peselValidator;
 
 function validateDatePart(datePart) {
     // stulecia kodowane są w części dla miesięcy
@@ -110,7 +108,6 @@ function getDecodedMonth(monthPart) {
 }
 
 function checkTypes(pesel, dateOfBirth, gender) {
-    var asas = dateOfBirth instanceof moment && dateOfBirth.isValid();
     if(typeof pesel !== 'string')
         throw new TypeError("Pesel must be a string")
     if(dateOfBirth && !(dateOfBirth instanceof moment && dateOfBirth.isValid())

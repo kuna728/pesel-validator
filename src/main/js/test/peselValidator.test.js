@@ -1,5 +1,5 @@
-const peselValidator = require("./peselValidator");
-const moment = require("moment");
+import peselValidator from "../src/peselValidator.js";
+import moment from "moment";
 
 const EXAMPLE_VALID_PESEL = "83120611127";
 

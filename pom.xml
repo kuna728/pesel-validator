@@ -4,10 +4,11 @@
 
   <groupId>pl.unak7.pesel-validator</groupId>
   <artifactId>pesel-validator</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <packaging>jar</packaging>
 
   <name>pesel-validator</name>
+  <description>[PL] Walidator numerów PESEL dla JS i javy. Walidator umożliwia walidację samego numeru PESEL jak i walidację na podstawie podanej daty urodzenia oraz płci.</description>
   <url>https://github.com/kuna728/pesel-validator</url>
 
   <properties>

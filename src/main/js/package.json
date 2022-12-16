@@ -1,7 +1,7 @@
 {
   "name": "pesel-validator",
-  "version": "1.0.1",
-  "description": "[PL] Walidator numerów PESEL dla JS i javy. Walidator umożliwia walidację samego numeru PESEL jak i walidację na podstawie podanej daty urodzenia oraz płci.",
+  "version": "1.0.3",
+  "description": "PESEL (Polish personal ID number) validator for java and JS. Library provides both standalone PESEL validation and PESEL validation based on given date of birth and gender.",
   "repository": {
     "type": "git",
     "url": "https://github.com/kuna728/pesel-validator",
@@ -14,8 +14,10 @@
   "type": "module",
   "keywords": [
     "pesel",
+    "polish",
     "walidator",
-    "validation"
+    "validation",
+    "validator"
   ],
   "author": "kuna7",
   "license": "ISC",

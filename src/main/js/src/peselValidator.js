@@ -21,28 +21,19 @@ export default function peselValidator(pesel, optionalArgs) {
     const datePart = pesel.substring(0, 6);
     const genderPart = pesel.charAt(9);
 
-    // console.log("validateDatePart: " + validateDatePart(datePart));
-    // console.log("datesEqual: " + datesEqual(datePart, dateOfBirth));
-    // console.log("genderEqual: " + genderEqual(genderPart, gender));
-    // console.log("checkSumEqual: " + checkSumEqual(pesel));
-
     return validateDatePart(datePart) && datesEqual(datePart, dateOfBirth)
         && genderEqual(genderPart, gender) && validateCheckSum(pesel);
 }
 
 function validateDatePart(datePart) {
-    // stulecia kodowane są w części dla miesięcy
-    // https://pl.wikipedia.org/wiki/PESEL#Data_urodzenia
     const yearPart = datePart.substring(0, 2);
     const monthPart = datePart.substring(2, 4);
     const dayPart = datePart.substring(4, 6);
     if(!/^[0-9][0-9]([02468][1-9]|[13579][0-2])$/.test(yearPart + monthPart))
         return false;
     const dayPartInt = parseInt(dayPart);
-    // console.log(moment(`${getYearBeginning(yearPart, monthPart)}${yearPart}-${monthPart}`).daysInMonth())
     return dayPartInt > 0 && dayPartInt <=
         moment(`${getYearBeginning(yearPart, monthPart)}${yearPart}-${getDecodedMonth(monthPart)}`, "YYYY-MM").daysInMonth();
-
 }
 
 function datesEqual(datePart, dateOfBirth) {
@@ -51,9 +42,7 @@ function datesEqual(datePart, dateOfBirth) {
     const yearPart = datePart.substring(0, 2);
     const monthPart = datePart.substring(2, 4);
     const dayPart = datePart.substring(4, 6);
-    // console.log(datePart)
     const dateString = getYearBeginning(yearPart, monthPart) + yearPart + "-" + getDecodedMonth(monthPart) + "-" + dayPart;
-    // console.log("dateString " + dateString)
     return moment(dateOfBirth).isSame(dateString, "day");
 }
 
@@ -77,7 +66,6 @@ function genderEqual(genderPart, gender) {
 }
 
 function validateCheckSum(pesel) {
-    // https://pl.wikipedia.org/wiki/PESEL#Cyfra_kontrolna_i_sprawdzanie_poprawno%C5%9Bci_numeru
     const indexWeights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3, 1];
 
     let sum = 0;
